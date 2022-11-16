@@ -6,7 +6,7 @@ This is a quick PoC to demonstrate two node, client and server, applications run
 ### server
 Before executing the following command find server hostname, if you are running this on Openshift local then it might be `apps-crc.testing`. You will need to put `apps-crc.testing` when prompted for `Common Name`.
 ```
-openssl req -new -x509 -days 365 -keyout server-ca-key.pem -out server-ca-crt.pem
+openssl req -new -x509 -days 365 -keyout server-ca-key.pem -out server-ca-crt.pem -nodes -subj "/C=CA/ST=Ontario/L=Toronto/O=RedHat/OU=IT Department/CN=app.example.com"
 ```
 
 ```
@@ -15,7 +15,7 @@ openssl genrsa -out server-key.pem 4096
 
 Before executing the following command you will need to figure out what route are you planning to user for the server, In my case it was `server-demo1.apps-crc.testing`. So, you will need to put `server-demo1.apps-crc.testing` when prompted for `Common Name`.
 ```
-openssl req -new -sha256 -key server-key.pem -out server-csr.pem
+openssl req -new -sha256 -key server-key.pem -out server-csr.pem nodes -subj "/C=CA/ST=Ontario/L=Toronto/O=RedHat/OU=IT Department/CN=server-server.apps.example.com"
 ```
 
 ```
