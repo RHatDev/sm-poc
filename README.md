@@ -8,7 +8,7 @@ The following instuctions describe how to provision this demo in an OpenShift cl
 ## Provision certificate management
 
 1. Install the Red Hat OpenShift Certificate Manager operator.
-2. Provision the certificate issuers
+2. Provision the certificate issuers (cluster admin user)
 ```
 oc apply -f cert-manager/ -n openshift-cert-manager
 ```
