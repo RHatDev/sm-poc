@@ -15,7 +15,7 @@ openssl genrsa -out server-key.pem 4096
 
 Before executing the following command you will need to figure out what route are you planning to user for the server, In my case it was `server-demo1.apps-crc.testing`. So, you will need to put `server-demo1.apps-crc.testing` when prompted for `Common Name`.
 ```
-openssl req -new -sha256 -key server-key.pem -out server-csr.pem nodes -subj "/C=CA/ST=Ontario/L=Toronto/O=RedHat/OU=IT Department/CN=server-server.apps.example.com"
+openssl req -new -sha256 -key server-key.pem -out server-csr.pem -nodes -subj "/C=CA/ST=Ontario/L=Toronto/O=RedHat/OU=IT Department/CN=server-server.apps.example.com"
 ```
 
 ```
